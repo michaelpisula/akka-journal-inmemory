@@ -1,6 +1,8 @@
 package akka.persistence.journal.inmemory;
 
 import akka.dispatch.Futures;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.Procedure;
 import akka.persistence.Deliver;
 import akka.persistence.PersistentConfirmation;
@@ -22,6 +24,7 @@ import static scala.collection.JavaConversions.asScalaBuffer;
 
 public class InMemoryJournal extends SyncWriteJournal {
 
+  private LoggingAdapter log = Logging.getLogger( context().system(), this );
   private Map<String, Map<Long, PersistentRepr>> persistentMap = Maps.newHashMap();
 
   @Override
@@ -171,12 +174,10 @@ public class InMemoryJournal extends SyncWriteJournal {
   @Override
   public void postStop() throws Exception {
     if ( !isEmpty() ) {
-      System.out.println(
-          "--------------------------\n" +
-          "Journal is dirty\n" +
-          Joiner.on( '\n' ).join( mapToString() ) + "\n" +
-          "--------------------------" );
-      //System.exit( 3 );
+      log.error( "\n--------------------------\n" +
+                 "Journal is dirty\n{}" +
+                 "--------------------------",
+                 Joiner.on( '\n' ).join( mapToString() ) + "\n" );
     }
     persistentMap.clear();
   }
