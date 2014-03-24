@@ -1,4 +1,4 @@
-organization := "io.github.michaelpisula"
+organization := "com.github.michaelpisula"
 
 name := "akka-persistence-inmemory"
 
@@ -12,7 +12,7 @@ parallelExecution in Test := false
 
 resolvers += "krasserm at bintray" at "http://dl.bintray.com/krasserm/maven"
 
-libraryDependencies += "com.github.krasserm" %% "akka-persistence-testkit" % "0.2" % "test"
+libraryDependencies += "com.github.krasserm" %% "akka-persistence-testkit" % "0.3" % "test"
 
 libraryDependencies += "com.typesafe.akka" %% "akka-persistence-experimental" % "2.3.0" % "compile"
 

@@ -12,7 +12,7 @@ There have no artifacts been published to a public repository, yet. To
 use this journal you have to compile and publish it to your local
 repository with `sbt publishLocal` and include it in your project:
 
-    libraryDependencies += "io.github.michaelpisula" %% "akka-persistence-inmemory" % "0.1-SNAPSHOT"
+    libraryDependencies += "com.github.michaelpisula" %% "akka-persistence-inmemory" % "0.1-SNAPSHOT"
 
 ## Configuration
 
