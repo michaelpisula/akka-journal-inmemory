@@ -8,11 +8,9 @@ to let the journal exit the VM to signalize where unconfirmed messages occur. If
 Akka 2.3.0 or higher
 
 ## Installation
-There have no artifacts been published to a public repository, yet. To
-use this journal you have to compile and publish it to your local
-repository with `sbt publishLocal` and include it in your project:
+The artifact has been published to Maven Central. Include it in your build.sbt like this:
 
-    libraryDependencies += "com.github.michaelpisula" %% "akka-persistence-inmemory" % "0.1-SNAPSHOT"
+    libraryDependencies += "com.github.michaelpisula" %% "akka-persistence-inmemory" % "0.1"
 
 ## Configuration
 
