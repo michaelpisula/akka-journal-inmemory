@@ -2,7 +2,7 @@ organization := "com.github.michaelpisula"
 
 name := "akka-persistence-inmemory"
 
-version := "0.1-SNAPSHOT"
+version := "0.1"
 
 scalaVersion := "2.10.3"
 
@@ -21,3 +21,44 @@ libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % "2.3.0" % "test"
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" % "test"
 
 libraryDependencies += "commons-io" % "commons-io" % "2.4" % "test"
+
+// publishing settings
+
+publishMavenStyle := true
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
+
+publishTo <<= version { (v: String) =>
+  val nexus = "https://oss.sonatype.org/"
+  if (v.trim.endsWith("SNAPSHOT"))
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+
+pomExtra := (
+<url>http://github.com/michaelpisula/akka-journal-inmemory</url>
+<licenses>
+  <license>
+    <name>Apache 2 License</name>
+    <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+    <distribution>repo</distribution>
+  </license>
+</licenses>
+<scm>
+  <url>git@github.com:michaelpisula/akka-journal-inmemory.git</url>
+  <connection>scm:git:git@github.com:michaelpisula/akka-journal-inmemory.git</connection>
+</scm>
+<developers>
+  <developer>
+    <id>michaelpisula</id>
+    <name>Michael Pisula</name>
+  </developer>
+</developers>
+<parent>
+  <groupId>org.sonatype.oss</groupId>
+  <artifactId>oss-parent</artifactId>
+  <version>7</version>
+</parent>)
