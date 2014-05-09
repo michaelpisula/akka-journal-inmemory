@@ -10,7 +10,7 @@ Akka 2.3.0 or higher
 ## Installation
 The artifact has been published to Maven Central. Include it in your build.sbt like this:
 
-    libraryDependencies += "com.github.michaelpisula" %% "akka-persistence-inmemory" % "0.1"
+    libraryDependencies += "com.github.michaelpisula" %% "akka-persistence-inmemory" % "0.1.1"
 
 ## Configuration
 
