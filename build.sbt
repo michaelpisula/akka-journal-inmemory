@@ -2,9 +2,9 @@ organization := "com.github.michaelpisula"
 
 name := "akka-persistence-inmemory"
 
-version := "0.1.2"
+version := "0.2.0"
 
-scalaVersion := "2.10.3"
+scalaVersion := "2.11.0"
 
 javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 
@@ -14,11 +14,11 @@ parallelExecution in Test := false
 
 resolvers += "krasserm at bintray" at "http://dl.bintray.com/krasserm/maven"
 
-libraryDependencies += "com.github.krasserm" %% "akka-persistence-testkit" % "0.3" % "test"
+libraryDependencies += "com.github.krasserm" %% "akka-persistence-testkit" % "0.3.3" % "test" withSources() withJavadoc()
 
-libraryDependencies += "com.typesafe.akka" %% "akka-persistence-experimental" % "2.3.0" % "compile"
+libraryDependencies += "com.typesafe.akka" %% "akka-persistence-experimental" % "2.3.4" % "compile" withSources() withJavadoc()
 
-libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % "2.3.0" % "test"
+libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % "2.3.4" % "test"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" % "test"
 
