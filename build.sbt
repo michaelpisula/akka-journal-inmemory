@@ -6,6 +6,8 @@ version := "0.1.1"
 
 scalaVersion := "2.10.3"
 
+javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
+
 publishTo := Some(Resolver.file("file", new File(Path.userHome.absolutePath + "/.m2/repository")))
 
 parallelExecution in Test := false
