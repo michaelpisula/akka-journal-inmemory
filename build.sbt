@@ -4,9 +4,11 @@ name := "akka-persistence-inmemory"
 
 version := "0.2.0"
 
-scalaVersion := "2.11.0"
+scalaVersion := "2.11.1"
 
-javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
+javacOptions in (Compile) ++= Seq("-source", "1.7")
+
+javacOptions in (Compile, compile) ++= Seq("-target", "1.7")
 
 publishTo := Some(Resolver.file("file", new File(Path.userHome.absolutePath + "/.m2/repository")))
 
