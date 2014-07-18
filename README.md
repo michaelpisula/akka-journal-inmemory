@@ -5,13 +5,15 @@ Currently the journal will log if any messages were left unconfirmed when it clo
 to let the journal exit the VM to signalize where unconfirmed messages occur. If there is enough interest we will add this as a configurable feature.
 
 ## Requirements
-Akka 2.3.0 or higher, Scala 2.10.x => version 0.1.2
-Akka 2.3.4 or higher, Scala 2.11.x => version 0.2.0
+Akka 2.3.0 or higher => version 0.1.2
+Akka 2.3.4 or higher => version 0.2.1
+
+The 0.2.1 version is published for both Scala 2.11.1 and 2.10.4.
 
 ## Installation
 The artifact has been published to Maven Central. Include it in your build.sbt like this:
 
-    libraryDependencies += "com.github.michaelpisula" %% "akka-persistence-inmemory" % "0.2.0"
+    libraryDependencies += "com.github.michaelpisula" %% "akka-persistence-inmemory" % "0.2.1"
 
 ## Configuration
 
